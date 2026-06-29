@@ -382,11 +382,14 @@ function initFilter() {
 /* ══════════════════════════════════════
    CONTACT FORM
 ══════════════════════════════════════ */
+/* ══════════════════════════════════════
+   CONTACT FORM (Clean Version)
+══════════════════════════════════════ */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // EmailJS Initialize (Apni Public Key yahan daalein)
+  // Initialize with your Public Key
   emailjs.init("PqacPdPtvsuetRqmJ"); 
 
   form.addEventListener('submit', async e => {
@@ -401,12 +404,12 @@ function initContactForm() {
     btn.disabled = true;
     msg.className = 'form-msg';
 
-    // EmailJS Send
     try {
+      // Correct Service ID and Template ID
       await emailjs.send("service_kh5ncfh", "template_u4ax3ee", {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
+        title: document.getElementById('subject').value, // 'title' variable template se match kar raha hai
         message: document.getElementById('message').value
       });
 
