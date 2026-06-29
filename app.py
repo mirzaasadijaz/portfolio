@@ -127,7 +127,8 @@ Message:
         """)
 
         # Email send karein
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+            smtp.starttls() # Secure connection start karein
             smtp.login(SENDER_EMAIL, SENDER_PASSWORD)
             smtp.send_message(email_msg)
 
