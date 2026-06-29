@@ -109,29 +109,12 @@ def contact():
         if not all([name, email, message]):
             return jsonify({'ok': False, 'msg': 'Please fill in all required fields.'}), 400
 
-        # 1. SAVE TO JSON (Your existing code)
-        msgs_file = os.path.join(os.path.dirname(__file__), 'messages.json')
-        msgs = []
-        if os.path.exists(msgs_file):
-            with open(msgs_file) as f:
-                msgs = json.load(f)
-
-        msgs.append({
-            'name': name, 'email': email,
-            'subject': subject,
-            'message': message,
-            'ts': datetime.now().isoformat()
-        })
-        with open(msgs_file, 'w') as f:
-            json.dump(msgs, f, indent=2)
-
-        # 2. SEND THE EMAIL
+        # Email construct karein
         email_msg = EmailMessage()
         email_msg['Subject'] = f"Portfolio Contact: {subject if subject else 'New Message'}"
         email_msg['From'] = SENDER_EMAIL
         email_msg['To'] = RECEIVER_EMAIL
         
-        # The body of the email
         email_msg.set_content(f"""
 You have received a new message from your Data Science Portfolio!
 
@@ -143,16 +126,16 @@ Message:
 {message}
         """)
 
-        # Connect to Gmail's SMTP server and send
+        # Email send karein
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.login(SENDER_EMAIL, SENDER_PASSWORD)
             smtp.send_message(email_msg)
 
-        return jsonify({'ok': True, 'msg': "Message received! I'll reply within 24 hours. 🚀"})
+        return jsonify({'ok': True, 'msg': "Message sent successfully! 🚀"})
         
     except Exception as e:
-        print(f"Error: {e}") # This will print the exact error to your terminal for debugging
-        return jsonify({'ok': False, 'msg': 'Something went wrong. Please try again.'}), 500
+        print(f"Error: {e}") 
+        return jsonify({'ok': False, 'msg': 'Failed to send email. Please check your credentials.'}), 500
     
 @app.route('/download-resume')
 def download_resume():
