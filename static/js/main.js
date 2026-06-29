@@ -406,7 +406,7 @@ function initContactForm() {
 
     try {
       // Correct Service ID and Template ID
-      await emailjs.send("service_kh5ncfh", "template_u4ax3ee", {
+      await emailjs.send("service_3h1mtx1", "template_u4ax3ee", {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         title: document.getElementById('subject').value, // 'title' variable template se match kar raha hai
