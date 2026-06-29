@@ -387,7 +387,7 @@ function initContactForm() {
   if (!form) return;
 
   // EmailJS Initialize (Apni Public Key yahan daalein)
-  emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
+  emailjs.init("PqacPdPtvsuetRqmJ"); 
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -403,7 +403,7 @@ function initContactForm() {
 
     // EmailJS Send
     try {
-      await emailjs.send("service_kh5ncfh", "YOUR_TEMPLATE_ID_HERE", {
+      await emailjs.send("service_kh5ncfh", "template_u4ax3ee", {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         subject: document.getElementById('subject').value,
