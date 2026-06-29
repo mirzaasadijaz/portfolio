@@ -83,60 +83,6 @@ PROJECTS = [
 @app.route('/')
 def index():
     return render_template('index.html', projects=PROJECTS)
-
-import os
-import json
-import smtplib
-from email.message import EmailMessage
-from datetime import datetime
-from flask import request, jsonify
-
-# --- EMAIL CONFIGURATION ---
-# IMPORTANT: Never hardcode real passwords in production. Use environment variables.
-SENDER_EMAIL = "mirzaasadijaz@gmail.com"      # The email sending the message
-SENDER_PASSWORD = os.environ.get('EMAIL_PASSWORD') # Your 16-character App Password (see Step 2)
-RECEIVER_EMAIL = "mirzaasadijaz@gmail.com"    # Where you want to receive the messages (usually the same as sender)
-
-@app.route('/contact', methods=['POST'])
-def contact():
-    try:
-        data = request.get_json()
-        name = data.get('name', '').strip()
-        email = data.get('email', '').strip()
-        message = data.get('message', '').strip()
-        subject = data.get('subject', '').strip()
-
-        if not all([name, email, message]):
-            return jsonify({'ok': False, 'msg': 'Please fill in all required fields.'}), 400
-
-        # Email construct karein
-        email_msg = EmailMessage()
-        email_msg['Subject'] = f"Portfolio Contact: {subject if subject else 'New Message'}"
-        email_msg['From'] = SENDER_EMAIL
-        email_msg['To'] = RECEIVER_EMAIL
-        
-        email_msg.set_content(f"""
-You have received a new message from your Data Science Portfolio!
-
-Name: {name}
-Email: {email}
-Subject: {subject}
-
-Message:
-{message}
-        """)
-
-        # Email send karein
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.starttls() # Secure connection start karein
-            smtp.login(SENDER_EMAIL, SENDER_PASSWORD)
-            smtp.send_message(email_msg)
-
-        return jsonify({'ok': True, 'msg': "Message sent successfully! 🚀"})
-        
-    except Exception as e:
-        print(f"Error: {e}") 
-        return jsonify({'ok': False, 'msg': 'Failed to send email. Please check your credentials.'}), 500
     
 @app.route('/download-resume')
 def download_resume():
