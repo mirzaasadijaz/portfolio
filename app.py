@@ -94,7 +94,7 @@ from flask import request, jsonify
 # --- EMAIL CONFIGURATION ---
 # IMPORTANT: Never hardcode real passwords in production. Use environment variables.
 SENDER_EMAIL = "mirzaasadijaz@gmail.com"      # The email sending the message
-SENDER_PASSWORD = "xxkl snga fqlw dtlp" # Your 16-character App Password (see Step 2)
+SENDER_PASSWORD = os.environ.get('EMAIL_PASSWORD') # Your 16-character App Password (see Step 2)
 RECEIVER_EMAIL = "mirzaasadijaz@gmail.com"    # Where you want to receive the messages (usually the same as sender)
 
 @app.route('/contact', methods=['POST'])
