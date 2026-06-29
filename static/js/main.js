@@ -383,50 +383,47 @@ function initFilter() {
    CONTACT FORM
 ══════════════════════════════════════ */
 function initContactForm() {
-  const form  = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form');
   if (!form) return;
+
+  // EmailJS Initialize (Apni Public Key yahan daalein)
+  emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn   = document.getElementById('submit-btn');
-    const txt   = btn.querySelector('.btn-txt');
-    const load  = btn.querySelector('.btn-load');
-    const msg   = document.getElementById('form-msg');
+    const btn = document.getElementById('submit-btn');
+    const txt = btn.querySelector('.btn-txt');
+    const load = btn.querySelector('.btn-load');
+    const msg = document.getElementById('form-msg');
 
-    txt.style.display  = 'none';
+    txt.style.display = 'none';
     load.style.display = 'inline-flex';
-    btn.disabled       = true;
-    msg.className      = 'form-msg';
+    btn.disabled = true;
+    msg.className = 'form-msg';
 
-    const payload = {
-      name:    document.getElementById('name').value,
-      email:   document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-    };
-
+    // EmailJS Send
     try {
-      const res    = await fetch('/contact', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload)
+      await emailjs.send("service_kh5ncfh", "YOUR_TEMPLATE_ID_HERE", {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
       });
-      const data   = await res.json();
-      msg.textContent = data.msg;
-      msg.className   = `form-msg ${data.ok ? 'success' : 'error'}`;
-      if (data.ok) form.reset();
-    } catch {
-      msg.textContent = 'Network error — please try again.';
-      msg.className   = 'form-msg error';
+
+      msg.textContent = "Message sent successfully! 🚀";
+      msg.className = 'form-msg success';
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      msg.textContent = 'Failed to send — please try again later.';
+      msg.className = 'form-msg error';
     } finally {
-      txt.style.display  = 'inline-flex';
+      txt.style.display = 'inline-flex';
       load.style.display = 'none';
-      btn.disabled       = false;
+      btn.disabled = false;
     }
   });
 }
-
-
 /* ══════════════════════════════════════
    PROJECT CARD TILT
 ══════════════════════════════════════ */
