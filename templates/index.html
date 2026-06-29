@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asad Ijaz — Data Scientist specializing in ML, Python, and predictive analytics"
+    />
+    <title>Asad Ijaz | Data Scientist</title>
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='logo/icon.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- ╔══ NAVIGATION ══╗ -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <div class="img-logo-container">
+          <img src="{{ url_for('static', filename='logo/logo.ico') }}" alt="AJ Data Science Logo" class="img-logo">
+        </div>
+        <!-- <a href="#home" class="nav-logo"> -->
+          <!-- <span class="lb">&lt;</span>AJ<span class="lb">/&gt;</span> -->
+        <!-- </a> -->
+        <div class="nav-links" id="nav-links">
+          <a href="#about" class="nl">About</a>
+          <a href="#skills" class="nl">Skills</a>
+          <a href="#projects" class="nl">Projects</a>
+          <a href="#experience" class="nl">Experience</a>
+          <a href="#education" class="nl">Education</a>
+          <a href="#contact" class="nl">Contact</a>
+        </div>
+        <a href="/download-resume" class="nav-cv">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ╔══ HERO ══╗ -->
+    <section class="hero" id="home">
+      <canvas id="neural-canvas"></canvas>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-scroll">
+        <a href="#about" class="scroll-cue">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll</span>
+        </a>
+      </div>
+      <div class="hero-body">
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          Available for freelance projects
+        </div>
+
+        <h1 class="hero-name">
+          <span class="hn-line">Asad</span>
+          <span class="hn-line gradient-text">Ijaz</span>
+        </h1>
+
+        <div class="hero-role-wrap">
+          <span id="typewriter" class="hero-role"></span
+          ><span class="type-cursor">|</span>
+        </div>
+        <p class="hero-bio">
+          Turning messy datasets into clear decisions — through machine
+          learning, predictive analytics, and Python-powered automation.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="/download-resume" class="btn btn-ghost">
+            <i class="fas fa-file-pdf"></i> Download CV
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a
+            href="https://github.com/mirzaasadijaz"
+            target="_blank"
+            class="soc-link"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/asad-ijaz-data-scientist"
+            target="_blank"
+            class="soc-link"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://instagram.com/mirzaasadijaz"
+            target="_blank"
+            class="soc-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stats-bar">
+        <div class="hstat">
+          <span class="hstat-n" data-target="16">0</span>
+          <span class="hstat-l">GitHub Repos</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-n" data-target="6">0</span>
+          <span class="hstat-l">ML Projects</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-n" data-target="15">0</span>
+          <span class="hstat-l">Technologies</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ ABOUT ══╗ -->
+    <section class="sect" id="about">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">01 — About</span>
+          <h2 class="sect-title">Building Intelligence<br />From Raw Data</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile card -->
+          <div class="profile-card reveal">
+            <div class="profile-img-ring">
+              <img
+                src="https://avatars.githubusercontent.com/u/239373422?v=4"
+                alt="Asad Ijaz"
+                class="profile-img"
+                onerror="
+                  this.src =
+                    'https://ui-avatars.com/api/?name=Asad+Ijaz&size=200&background=0d1526&color=00d4ff&bold=true'
+                "
+              />
+              <div class="online-badge">
+                <span class="online-dot"></span>Open to work
+              </div>
+            </div>
+            <h3 class="profile-name">Asad Ijaz</h3>
+            <p class="profile-role">Data Scientist · Python Developer</p>
+            <div class="profile-chips">
+              <span class="chip">🐍 Python</span>
+              <span class="chip">🤖 ML Engineer</span>
+              <span class="chip">📊 Analytics</span>
+              <span class="chip">⚡ Automation</span>
+            </div>
+            <div class="profile-socials">
+              <a
+                href="https://github.com/mirzaasadijaz"
+                target="_blank"
+                class="psoc"
+              >
+                <i class="fab fa-github"></i> mirzaasadijaz
+              </a>
+              <a
+                href="https://linkedin.com/in/asad-ijaz-data-scientist"
+                target="_blank"
+                class="psoc"
+              >
+                <i class="fab fa-linkedin"></i> asad-ijaz-data-scientist
+              </a>
+            </div>
+          </div>
+
+          <!-- Bio content -->
+          <div class="about-bio reveal">
+            <p class="bio-p">
+              I'm a passionate <strong>Data Scientist</strong> from Faisalabad,
+              Pakistan, with deep expertise in Python, machine learning, and
+              predictive analytics. I specialize in transforming complex
+              datasets into actionable intelligence that drives real business
+              decisions.
+            </p>
+            <p class="bio-p">
+              My work spans end-to-end ML pipelines — from data wrangling with
+              <strong>Pandas and NumPy</strong> to deploying models with
+              <strong>Scikit-Learn and Flask</strong>. Currently focused on
+              building customer retention systems and content-based
+              recommendation engines.
+            </p>
+            <p class="bio-p">
+              Beyond algorithms, I love automating workflows with
+              <strong>Selenium</strong>, uncovering market trends via the Google
+              API, and building AI-powered desktop tools that solve real-world
+              problems.
+            </p>
+
+            <div class="about-counters">
+              <div class="acnt">
+                <span class="acnt-n" data-target="16">0</span>
+                <span class="acnt-l">Repositories</span>
+              </div>
+              <div class="acnt">
+                <span class="acnt-n" data-target="6">0</span>
+                <span class="acnt-l">ML Projects</span>
+              </div>
+              <div class="acnt">
+                <span class="acnt-n" data-target="3">0</span>
+                <span class="acnt-l">Years Coding</span>
+              </div>
+              <div class="acnt">
+                <span class="acnt-n" data-target="100">0</span>
+                <span class="acnt-l">% Committed</span>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <a href="/download-resume" class="btn btn-primary">
+                <i class="fas fa-file-pdf"></i> Download Resume
+              </a>
+              <a href="#contact" class="btn btn-ghost">
+                Let's Talk <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ SKILLS ══╗ -->
+    <section class="sect sect-dark" id="skills">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">02 — Skills</span>
+          <h2 class="sect-title">Technical Arsenal</h2>
+          <p class="sect-sub">
+            Technologies and tools I use to build data-driven solutions
+          </p>
+        </div>
+
+        <!-- Skill rings -->
+        <div class="skill-rings reveal">
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="95"
+                  style="stroke: #00d4ff"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span><span class="sr-lbl">Python</span>
+              </div>
+            </div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="90"
+                  style="stroke: #7c3aed"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span
+                ><span class="sr-lbl">Scikit-Learn</span>
+              </div>
+            </div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="88"
+                  style="stroke: #00d4ff"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span
+                ><span class="sr-lbl">Pandas / NumPy</span>
+              </div>
+            </div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="85"
+                  style="stroke: #10b981"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span
+                ><span class="sr-lbl">Visualization</span>
+              </div>
+            </div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="88"
+                  style="stroke: #7c3aed"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span
+                ><span class="sr-lbl">Web Scraping</span>
+              </div>
+            </div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-wrap">
+              <svg class="sr-svg" viewBox="0 0 120 120">
+                <circle class="sr-bg" cx="60" cy="60" r="52" />
+                <circle
+                  class="sr-prog"
+                  cx="60"
+                  cy="60"
+                  r="52"
+                  data-pct="75"
+                  style="stroke: #f59e0b"
+                />
+              </svg>
+              <div class="sr-inner">
+                <span class="sr-pct">0%</span
+                ><span class="sr-lbl">Deep Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech stack grid -->
+        <div class="tech-stack reveal">
+          <h3 class="ts-title">Full Tech Stack</h3>
+          <div class="ts-cats">
+            <div class="ts-cat">
+              <span class="ts-cat-lbl">Languages</span>
+              <div class="ts-badges">
+                <span class="badge b-cyan">Python</span>
+                <span class="badge b-cyan">C++</span>
+                <span class="badge b-cyan">C#</span>
+                <span class="badge b-cyan">SQL</span>
+                <span class="badge b-cyan">Laravel</span>
+              </div>
+            </div>
+            <div class="ts-cat">
+              <span class="ts-cat-lbl">ML / AI</span>
+              <div class="ts-badges">
+                <span class="badge b-violet">Scikit-Learn</span>
+                <span class="badge b-violet">TensorFlow</span>
+                <span class="badge b-violet">Keras</span>
+                <span class="badge b-violet">PyTorch</span>
+                <span class="badge b-violet">NLP</span>
+              </div>
+            </div>
+            <div class="ts-cat">
+              <span class="ts-cat-lbl">Data</span>
+              <div class="ts-badges">
+                <span class="badge b-green">Pandas</span>
+                <span class="badge b-green">NumPy</span>
+                <span class="badge b-green">Matplotlib</span>
+                <span class="badge b-green">Plotly</span>
+                <span class="badge b-green">MySQL</span>
+              </div>
+            </div>
+            <div class="ts-cat">
+              <span class="ts-cat-lbl">Tools</span>
+              <div class="ts-badges">
+                <span class="badge b-orange">Flask</span>
+                <span class="badge b-orange">Selenium</span>
+                <span class="badge b-orange">Streamlit</span>
+                <span class="badge b-orange">Tkinter</span>
+                <span class="badge b-orange">Jupyter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ PROJECTS ══╗ -->
+    <section class="sect" id="projects">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">03 — Projects</span>
+          <h2 class="sect-title">Featured Work</h2>
+          <p class="sect-sub">
+            From ML pipelines to automation tools — built to solve real problems
+          </p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="fb active" data-filter="all">All Projects</button>
+          <button class="fb" data-filter="ml">Machine Learning</button>
+          <button class="fb" data-filter="analytics">Analytics</button>
+          <button class="fb" data-filter="automation">Automation</button>
+        </div>
+
+        <div class="proj-grid" id="proj-grid">
+          {% for p in projects %}
+          <div class="proj-card reveal" data-cat="{{ p.cat }}">
+            <div class="pc-top">
+              <span class="pc-emoji">{{ p.emoji }}</span>
+              <a
+                href="{{ p.github }}"
+                target="_blank"
+                class="pc-gh"
+                aria-label="View on GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <h3 class="pc-title">{{ p.title }}</h3>
+            <p class="pc-desc">{{ p.desc }}</p>
+            <div class="pc-tech">
+              {% for t in p.tech %}
+              <span class="pc-tag">{{ t }}</span>
+              {% endfor %}
+            </div>
+            <div class="pc-footer">
+              <span class="pc-stars"
+                ><i class="fas fa-star"></i> {{ p.stars }}</span
+              >
+              <a href="{{ p.github }}" target="_blank" class="pc-link">
+                GitHub <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="sect-cta reveal">
+          <a
+            href="https://github.com/mirzaasadijaz?tab=repositories"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            <i class="fab fa-github"></i> View All Repositories
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ EXPERIENCE ══╗ -->
+    <section class="sect sect-dark" id="experience">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">04 — Experience</span>
+          <h2 class="sect-title">Work History</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-line"></div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div class="tl-meta">
+                  <h3 class="tl-role">Freelance Data Scientist</h3>
+                  <p class="tl-co">Self-Employed · Remote</p>
+                </div>
+                <span class="tl-period">2024 — Present</span>
+              </div>
+              <ul class="tl-list">
+                <li>
+                  Developing end-to-end ML pipelines for customer churn
+                  prediction and recommendation systems
+                </li>
+                <li>
+                  Building interactive analytics dashboards with Plotly and
+                  Streamlit for client decision-making
+                </li>
+                <li>
+                  Consulting on data strategy and implementing automated
+                  analytics workflows
+                </li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tt">Python</span
+                ><span class="tt">Scikit-Learn</span>
+                <span class="tt">Flask</span><span class="tt">Streamlit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div class="tl-meta">
+                  <h3 class="tl-role">
+                    Python Developer & Automation Engineer
+                  </h3>
+                  <p class="tl-co">Freelance · Remote</p>
+                </div>
+                <span class="tl-period">2023 — 2024</span>
+              </div>
+              <ul class="tl-list">
+                <li>
+                  Built Selenium-powered web automation tools handling login
+                  flows, data extraction, and media uploads
+                </li>
+                <li>
+                  Developed NLP-based desktop applications including the JARVIS
+                  AI voice assistant
+                </li>
+                <li>
+                  Created data scraping and Google Trends analysis pipelines for
+                  market intelligence
+                </li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tt">Selenium</span><span class="tt">NLP</span>
+                <span class="tt">Web Scraping</span
+                ><span class="tt">Tkinter</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div class="tl-meta">
+                  <h3 class="tl-role">E-Commerce Entrepreneur</h3>
+                  <p class="tl-co">Self-Employed · Faisalabad, Pakistan</p>
+                </div>
+                <span class="tl-period">2022 — Present</span>
+              </div>
+              <ul class="tl-list">
+                <li>
+                  Running data-informed e-commerce operations applying analytics
+                  for inventory and pricing decisions
+                </li>
+                <li>
+                  Using Google Trends and market analysis to identify
+                  high-demand product opportunities
+                </li>
+                <li>
+                  Automating repetitive social media management tasks with
+                  custom Python bots
+                </li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tt">E-Commerce</span
+                ><span class="tt">Analytics</span>
+                <span class="tt">Python Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ EDUCATION ══╗ -->
+    <section class="sect" id="education">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">05 — Education</span>
+          <h2 class="sect-title">Learning Path</h2>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-body">
+              <span class="edu-badge">Degree</span>
+              <h3 class="edu-title">Bachelor of Science — Computer Science</h3>
+              <p class="edu-inst">The University of Agriculture Faisalabad (Main Branch)</main></p>
+              <span class="edu-yr">2024 — 2028</span>
+              <p class="edu-desc">
+                Core studies in algorithms, data structures, databases, and
+                software engineering. Specialized coursework in data analysis
+                and applied machine learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-card reveal">
+            <div class="edu-icon">📜</div>
+            <div class="edu-body">
+              <span class="edu-badge edu-badge-v">Certification</span>
+              <h3 class="edu-title">Data Science Specialization</h3>
+              <p class="edu-inst">codewithharry — The Ultimate Job Ready Data Science Course</p>
+              <span class="edu-yr">2024</span>
+              <p class="edu-desc">
+                Supervised & unsupervised learning, neural networks,
+                recommendation systems, and advanced ML techniques from the
+                industry's most recognized course.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-card reveal">
+            <div class="edu-icon">🏆</div>
+            <div class="edu-body">
+              <span class="edu-badge edu-badge-g">Certification</span>
+              <h3 class="edu-title">Python for Data Science & AI</h3>
+              <p class="edu-inst">codewithharry - Complete 2026 Python Bootcamp: Learn Python from Scratch</p>
+              <span class="edu-yr">2023</span>
+              <p class="edu-desc">
+                Comprehensive training in Python programming, data analysis with
+                Pandas and NumPy, data visualization, and foundations of
+                artificial intelligence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ CONTACT ══╗ -->
+    <section class="sect sect-dark" id="contact">
+      <div class="cont">
+        <div class="sect-head">
+          <span class="sect-tag">06 — Contact</span>
+          <h2 class="sect-title">Let's Work Together</h2>
+          <p class="sect-sub">Have a data problem? Let's build the solution.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info panel -->
+          <div class="contact-info reveal">
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>mirzaasadijaz@gmail.com</p>
+              </div>
+            </div>
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Location</h4>
+                <p>Faisalabad, Punjab, Pakistan</p>
+              </div>
+            </div>
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <h4>GitHub</h4>
+                <p>github.com/mirzaasadijaz</p>
+              </div>
+            </div>
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>asad-ijaz-data-scientist</p>
+              </div>
+            </div>
+            <div class="avail-pill">
+              <span class="avail-dot"></span>
+              Currently accepting new projects
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <form class="contact-form reveal" id="contact-form">
+            <div class="form-row">
+              <div class="fg">
+                <label for="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+              <div class="fg">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="fg">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Project inquiry, collaboration..."
+              />
+            </div>
+            <div class="fg">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your data challenge..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-full"
+              id="submit-btn"
+            >
+              <span class="btn-txt"
+                ><i class="fas fa-paper-plane"></i> Send Message</span
+              >
+              <span class="btn-load" style="display: none"
+                ><i class="fas fa-spinner fa-spin"></i> Sending...</span
+              >
+            </button>
+            <div class="form-msg" id="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══ FOOTER ══╗ -->
+    <footer class="footer">
+      <div class="cont">
+        <div class="foot-grid">
+          <div class="img-logo-container">
+            <img src="{{ url_for('static', filename='logo/logo.ico') }}" alt="AJ Data Science Logo" class="img-logo">
+          </div>
+          <!-- <div class="foot-logo"> -->
+            <!-- <span class="lb">&lt;</span>AJ<span class="lb">/&gt;</span> -->
+          <!-- </div> -->
+          <p class="foot-copy">
+            &copy; 2025 Asad Ijaz · Built with Flask &amp; powered by data ⚡
+          </p>
+          <div class="foot-links">
+            <a href="https://github.com/mirzaasadijaz" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/asad-ijaz-data-scientist"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://instagram.com/mirzaasadijaz" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
