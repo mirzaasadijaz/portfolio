@@ -409,8 +409,9 @@ function initContactForm() {
       await emailjs.send("service_3h1mtx1", "template_u4ax3ee", {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        title: document.getElementById('subject').value, // 'title' variable template se match kar raha hai
-        message: document.getElementById('message').value
+        title: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })
       });
 
       msg.textContent = "Message sent successfully! 🚀";
