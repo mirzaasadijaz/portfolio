@@ -77,13 +77,23 @@ a:hover{color:var(--cobalt)}
 @media(prefers-reduced-motion:reduce){.hero h1{animation:none}html{scroll-behavior:auto}}
 
 /* cursor light */
-#glow i,#glow b{position:fixed;left:0;top:0;z-index:60;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .3s,scale .2s}
-#glow i{width:440px;height:440px;background:radial-gradient(circle,rgba(35,52,232,.14),transparent 62%)}
-#glow b{width:28px;height:28px;border:1.5px solid var(--cobalt)}
-#glow.dark i{background:radial-gradient(circle,rgba(143,155,255,.22),transparent 62%)}
-#glow.dark b{border-color:var(--hi)}
-#glow.on i,#glow.on b{opacity:1}
-#glow.hot b{scale:1.9}
+/* Base cursor styling */
+#glow i, #glow b {
+  position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none;
+  border-radius: 50%; opacity: 0; transition: opacity .3s, scale .2s;
+}
+#glow i { width: 440px; height: 440px; background: radial-gradient(circle, rgba(35,52,232,.14), transparent 62%); }
+#glow b { width: 28px; height: 28px; border: 1.5px solid var(--cobalt); }
+#glow.dark i { background: radial-gradient(circle, rgba(143,155,255,.22), transparent 62%); }
+#glow.dark b { border-color: var(--hi); }
+
+/* Cursor show karna jab screen par mouse aaye */
+#glow.on i, #glow.on b { opacity: 1; }
+
+/* Link par hover hone par SIRF chota circle (b) hide karna */
+#glow.hot b {
+  opacity: 0 !important; 
+}
 
 /* contact form */
 .form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:40rem;margin:0 0 1.6rem}
