@@ -4,22 +4,28 @@
   if (!g || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches, [soft, ring] = g.children;
   let x = innerWidth / 2, y = innerHeight / 2, sx = x, sy = y, rx = x, ry = y;
+  
   g.hidden = false;
+  
   addEventListener('pointermove', e => {
     x = e.clientX; y = e.clientY; g.classList.add('on');
     g.classList.toggle('dark', !!e.target.closest('.hero,.dark,.foot,.bar,.chat,.chat-open'));
     g.classList.toggle('hot', !!e.target.closest('a,button,summary,input,textarea,label'));
   }, { passive: true });
+  
   document.documentElement.addEventListener('pointerleave', () => g.classList.remove('on'));
+  
   (function tick() {
     sx += (x - sx) * (calm ? 1 : .12); sy += (y - sy) * (calm ? 1 : .12);
     rx += (x - rx) * (calm ? 1 : .3); ry += (y - ry) * (calm ? 1 : .3);
-    soft.style.transform = `translate3d(${sx - 220}px,${sy - 220}px,0)`;
-    ring.style.transform = `translate3d(${rx - 14}px,${ry - 14}px,0)`;
+    
+    // The ultimate fix: translate(-50%, -50%) keeps it perfectly centered always
+    soft.style.transform = `translate3d(${sx}px, ${sy}px, 0) translate(-50%, -50%)`;
+    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+    
     requestAnimationFrame(tick);
   })();
 })();
-
 (() => {
   const f = document.getElementById('contact-form');
   if (!f) return;
