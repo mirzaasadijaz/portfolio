@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ c.profile.name }}, data scientist</title>
+<meta name="description" content="{{ c.profile.summary }}">
+<meta property="og:title" content="{{ c.profile.name }}, data scientist">
+<meta property="og:description" content="{{ c.profile.summary }}">
+<meta property="og:image" content="{{ url_for('static', filename='img/asad.jpg', _external=True) }}">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="{{ url_for('static', filename='img/logo.svg') }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="{{ url_for('home') }}" aria-label="{{ c.profile.name }}, home"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="40" height="40"></a>
+  <nav aria-label="Sections">{% for s in c.nav %}<a href="{{ url_for('home') }}#{{ s.id }}">{{ s.label }}</a>{% endfor %}</nav>
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer class="foot"><span>{{ c.profile.name }}, {{ year or '' }}</span><span>Built with Flask</span></footer>
+<div id="glow" hidden aria-hidden="true"><i></i><b></b></div>
+<button id="chat-open" class="chat-open" type="button" aria-label="Open the chat assistant" aria-controls="chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round"/></svg>Ask about Asad</button>
+<section id="chat" class="chat" role="dialog" aria-label="Chat with the portfolio assistant" hidden>
+  <header><div><strong>Ask about Asad</strong><small>Answers come from this portfolio</small></div><button type="button" id="chat-close" aria-label="Close chat">&times;</button></header>
+  <div id="chat-log" class="log" aria-live="polite"></div>
+  <div id="chat-tips" class="tips"></div>
+  <form id="chat-form"><input id="chat-input" placeholder="Ask about projects, skills, experience" maxlength="600" autocomplete="off" aria-label="Your message">
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-3-7z" stroke-linejoin="round"/></svg></button></form>
+</section>
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/extras.js') }}" defer></script>
+</body>
+</html>

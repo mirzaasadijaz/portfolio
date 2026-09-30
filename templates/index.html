@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% macro job(x) %}<div class="item job"><time>{{ x.dates }}</time><div><h3>{{ x.role }}</h3><p class="meta">{{ x.org }}{% if x.place %}, {{ x.place }}{% endif %}</p></div></div>{% endmacro %}
+{% macro pills(list) %}<ul class="pills">{% for t in list %}<li>{{ t }}</li>{% endfor %}</ul>{% endmacro %}
+{% block content %}
+{% set p = c.profile %}
+<section class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <figure><img src="{{ url_for('static', filename='img/asad.jpg') }}" alt="Portrait of {{ p.name }}" width="1080" height="1080" fetchpriority="high"></figure>
+  <div class="intro">
+    <p class="role">{{ p.role }}</p>
+    <p class="lede">{{ p.tagline }}</p>
+    <ul class="links">{% for l in c.links %}<li><a href="{{ l.url }}" rel="me noopener" target="_blank">{{ l.label }}</a></li>{% endfor %}</ul>
+  </div>
+  <h1>{{ p.name }}</h1>
+</section>
+
+<section class="sec" id="about"><h2>About</h2><div>{% for t in p.about %}<p class="prose">{{ t }}</p>{% endfor %}</div></section>
+
+<section class="sec alt" id="work"><h2>Selected work</h2>
+  <div>
+    <div class="chips" role="group" aria-label="Filter projects">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      {% for a in c.areas if a.id in used %}<button type="button" data-filter="{{ a.id }}" aria-pressed="false">{{ a.title }}</button>{% endfor %}
+    </div>
+    <div id="pinned">
+    {% for x in c.projects %}
+    <article class="item" data-areas="{{ x.areas|join(' ') }}"><h3>{{ x.title }}</h3><p>{{ x.summary }}</p>
+      {{ pills(x.tags) }}
+      <p class="acts"><a href="{{ x.url }}" target="_blank" rel="noopener">Source on GitHub</a>{% if x.live %}<a href="{{ x.live }}" target="_blank" rel="noopener">Live demo</a>{% endif %}</p></article>
+    {% endfor %}
+    </div>
+    {% if more %}<h3 class="sub">More on GitHub</h3>
+    {% for r in more %}<article class="item slim"><h3><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a></h3><p>{{ r.description }}</p><p class="meta">{{ r.language or 'Various' }}, updated {{ r.pushed }}</p></article>{% endfor %}{% endif %}
+    {% if docker %}<h3 class="sub">Container images</h3>
+    {% for d in docker %}<article class="item slim"><h3><a href="{{ d.url }}" target="_blank" rel="noopener">{{ d.name }}</a></h3>{% if d.description %}<p>{{ d.description }}</p>{% endif %}<p class="meta">{{ '{:,}'.format(d.pulls) }} pulls, updated {{ d.updated }}</p></article>{% endfor %}{% endif %}
+  </div>
+</section>
+
+<section class="sec" id="experience"><h2>Experience</h2>
+  <div>
+    <div class="acc">
+    {% for a in c.areas %}
+      <details{% if loop.first %} open{% endif %}><summary>{{ a.title }}{% if a.note %}<small>{{ a.note }}</small>{% endif %}</summary>
+        <div class="body"><p>{{ a.summary }}</p>{{ pills(a.tools) }}
+          {% if a.projects %}<p class="meta">Built: {% for r in a.projects %}{% set q = by_repo.get(r) %}{% if q %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.title }}</a>{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}</p>{% endif %}
+        </div></details>
+    {% endfor %}
+    </div>
+    <h3 class="sub">Roles</h3>{% for x in c.experience %}{{ job(x) }}{% endfor %}
+    <h3 class="sub">Education</h3>{% for x in c.education %}{{ job(x) }}{% endfor %}
+  </div>
+</section>
+
+<section class="sec alt" id="skills"><h2>Skills</h2>
+  <div class="sk">{% for s in c.skills %}<h3>{{ s.group }}</h3>{{ pills(s['items'].split(', ')) }}{% endfor %}</div>
+</section>
+
+<section class="sec dark" id="contact"><h2>Let's work together</h2>
+  <div><p class="prose">Open to data science, AI and automation projects. Send a message and Asad will reply by email.</p>
+  <form id="contact-form" class="form" data-service="{{ emailjs.service }}" data-template="{{ emailjs.template }}" data-key="{{ emailjs.key }}" novalidate>
+    <label>Name<input name="from_name" autocomplete="name" maxlength="80" required></label>
+    <label>Email<input name="from_email" type="email" autocomplete="email" maxlength="120" required></label>
+    <label class="wide">Message<textarea name="message" rows="5" maxlength="2000" required></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Send message</button>
+    <p class="status" role="status" aria-live="polite"></p>
+  </form>
+  <p class="meta">Prefer email? <a href="mailto:{{ p.email }}">{{ p.email }}</a></p>
+  <ul class="links">{% for l in c.links %}<li><a href="{{ l.url }}" rel="me noopener" target="_blank">{{ l.label }}</a></li>{% endfor %}</ul></div>
+</section>
+{% endblock %}

@@ -1,0 +1,302 @@
+{
+  "profile": {
+    "name": "Asad Ijaz",
+    "role": "Data scientist and automation developer, Faisalabad, Pakistan",
+    "tagline": "I build predictive models and the software that puts them to work.",
+    "summary": "Asad Ijaz is a data scientist building machine learning models, LLM agents and automation tools in Python.",
+    "email": "mirzaasadijaz@gmail.com",
+    "about": [
+      "I take a problem from raw data to something people can use: cleaning and exploring the data, training the model (churn prediction, recommendation systems), then wrapping it in an app or pipeline.",
+      "Lately that work is agentic. I build LangGraph systems that retrieve, grade their own answers and correct course, and pipelines that research, write and publish on their own. I am a data scientist at Optimum Tech and a computer science student at the University of Agriculture, Faisalabad."
+    ]
+  },
+  "accounts": {
+    "github": "mirzaasadijaz",
+    "docker": "mirzaasadijaz"
+  },
+  "nav": [
+    {
+      "id": "work",
+      "label": "Work"
+    },
+    {
+      "id": "experience",
+      "label": "Experience"
+    },
+    {
+      "id": "skills",
+      "label": "Skills"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/mirzaasadijaz"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/asad-ijaz-data-scientist/"
+    },
+    {
+      "label": "Docker Hub",
+      "url": "https://hub.docker.com/u/mirzaasadijaz"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/mirzaasadijaz"
+    }
+  ],
+  "more_limit": 8,
+  "projects": [
+    {
+      "title": "Agentic RAG with hybrid search and reranking",
+      "repo": "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
+      "summary": "A LangGraph agent that routes each question, retrieves with dense plus BM25 search, reranks with a cross-encoder, grades what it found and corrects itself when the answer is weak.",
+      "tags": [
+        "LangGraph",
+        "RAG",
+        "Reranking"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
+      "areas": [
+        "agents",
+        "ai",
+        "chatbot"
+      ]
+    },
+    {
+      "title": "AI email dispatcher",
+      "repo": "AI-Agent-Email-Dispatcher",
+      "summary": "A Streamlit app where a Gemini-powered LangGraph workflow writes, themes, illustrates and sends personalised bulk email.",
+      "tags": [
+        "LangGraph",
+        "Gemini",
+        "Streamlit"
+      ],
+      "url": "https://github.com/mirzaasadijaz/AI-Agent-Email-Dispatcher",
+      "areas": [
+        "agents",
+        "ai",
+        "python"
+      ]
+    },
+    {
+      "title": "Aura Accessories shopping assistant",
+      "repo": "Aura-Accessories-Agentic-RAG-Chatbot",
+      "summary": "An agentic RAG chatbot for a luxury fashion brand, built as a LangGraph ReAct agent running on Groq.",
+      "tags": [
+        "LangGraph",
+        "Groq",
+        "RAG"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Aura-Accessories-Agentic-RAG-Chatbot",
+      "areas": [
+        "chatbot",
+        "agents",
+        "ai"
+      ]
+    },
+    {
+      "title": "Autonomous LinkedIn publisher",
+      "repo": "Autonomous-LinkedIn-AI-Publisher",
+      "summary": "A multi-agent pipeline that finds a trending data science topic, researches it, writes a post, fact-checks it and publishes it to LinkedIn.",
+      "tags": [
+        "LangGraph",
+        "Multi-agent"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Autonomous-LinkedIn-AI-Publisher",
+      "areas": [
+        "agents",
+        "ai"
+      ]
+    },
+    {
+      "title": "Facebook auto poster",
+      "repo": "Facebook-Auto-Poster",
+      "summary": "Selenium automation that logs in, visits group URLs, handles the anonymous-post toggle and uploads media.",
+      "tags": [
+        "Python",
+        "Selenium"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Facebook-Auto-Poster",
+      "areas": [
+        "python"
+      ]
+    },
+    {
+      "title": "Next-word predictor",
+      "repo": "Next-Word-Predictor-LSTM-",
+      "summary": "An Embedding and LSTM network in TensorFlow/Keras, trained on Kafka's The Metamorphosis to predict the next word and generate text.",
+      "tags": [
+        "TensorFlow",
+        "Keras",
+        "LSTM"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Next-Word-Predictor-LSTM-",
+      "areas": [
+        "dl",
+        "ml"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Data Scientist",
+      "org": "Optimum Tech",
+      "dates": "Jul 2026 to now",
+      "place": "Punjab, Pakistan"
+    },
+    {
+      "role": "Laravel Developer",
+      "org": "IMPEKT Limited",
+      "dates": "Jul 2025 to Feb 2026",
+      "place": ""
+    },
+    {
+      "role": "Laravel Developer",
+      "org": "Optimum Tech",
+      "dates": "Jan 2024 to Dec 2025",
+      "place": "Punjab, Pakistan"
+    }
+  ],
+  "education": [
+    {
+      "role": "BS Computer Science",
+      "org": "University of Agriculture, Faisalabad",
+      "dates": "Sep 2024 to Aug 2028",
+      "place": "Faisalabad"
+    }
+  ],
+  "skills": [
+    {
+      "group": "Data and machine learning",
+      "items": "Python, Pandas, NumPy, SciPy, scikit-learn, TensorFlow, Keras, PyTorch, MLflow, Matplotlib, Plotly"
+    },
+    {
+      "group": "LLM systems",
+      "items": "LangGraph, agentic RAG, hybrid search, reranking, Streamlit, Gemini, Groq"
+    },
+    {
+      "group": "Software",
+      "items": "Flask, Laravel, C++, C#, .NET, SQL, MySQL, Selenium, Docker"
+    }
+  ],
+  "areas": [
+    {
+      "id": "chatbot",
+      "title": "Chatbots",
+      "summary": "Assistants that answer from real product and document data, and decide for themselves when to look something up instead of guessing.",
+      "tools": [
+        "LangGraph",
+        "Groq",
+        "RAG",
+        "Streamlit"
+      ],
+      "projects": [
+        "Aura-Accessories-Agentic-RAG-Chatbot",
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+      ]
+    },
+    {
+      "id": "agents",
+      "title": "AI agents",
+      "summary": "Multi-step agents that plan, call tools, check their own output and finish the job, from research and writing to fact-checking and publishing.",
+      "tools": [
+        "LangGraph",
+        "Gemini",
+        "Groq",
+        "Multi-agent workflows"
+      ],
+      "projects": [
+        "Autonomous-LinkedIn-AI-Publisher",
+        "AI-Agent-Email-Dispatcher",
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+      ]
+    },
+    {
+      "id": "dl",
+      "title": "Deep learning",
+      "summary": "Neural networks built and trained end to end, including sequence models for text generation.",
+      "tools": [
+        "TensorFlow",
+        "Keras",
+        "PyTorch",
+        "LSTM"
+      ],
+      "projects": [
+        "Next-Word-Predictor-LSTM-"
+      ]
+    },
+    {
+      "id": "ml",
+      "title": "Machine learning",
+      "summary": "Predictive models from feature work to evaluation, including customer churn prediction and recommendation systems.",
+      "tools": [
+        "scikit-learn",
+        "SciPy",
+        "MLflow",
+        "NumPy"
+      ],
+      "projects": []
+    },
+    {
+      "id": "ds",
+      "title": "Data science",
+      "summary": "The whole lifecycle: cleaning and exploring data, modelling it, and turning the result into insight people can act on. This is my current role at Optimum Tech.",
+      "tools": [
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Plotly",
+        "SQL"
+      ],
+      "projects": [],
+      "note": "Since Jul 2026"
+    },
+    {
+      "id": "ai",
+      "title": "Artificial intelligence",
+      "summary": "LLM applications with better retrieval: hybrid dense and BM25 search, cross-encoder reranking, and agents that grade what they found and correct themselves.",
+      "tools": [
+        "LangGraph",
+        "Hybrid search",
+        "Reranking",
+        "Gemini"
+      ],
+      "projects": [
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "summary": "My main language for data work, automation and small web apps, from Selenium bots to Flask and Streamlit interfaces.",
+      "tools": [
+        "Python",
+        "Selenium",
+        "Flask",
+        "Streamlit"
+      ],
+      "projects": [
+        "Facebook-Auto-Poster",
+        "AI-Agent-Email-Dispatcher"
+      ]
+    },
+    {
+      "id": "laravel",
+      "title": "Laravel",
+      "summary": "Professional web development on Laravel at Optimum Tech and IMPEKT Limited, before moving into data science.",
+      "tools": [
+        "Laravel",
+        "MySQL",
+        "SQL"
+      ],
+      "projects": [],
+      "note": "Jan 2024 to Feb 2026"
+    }
+  ]
+}
