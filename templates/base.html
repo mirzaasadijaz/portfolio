@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,23 +13,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- Theme Script (placed here to prevent Flash of Unstyled Content) -->
+<script>
+  const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+</script>
 </head>
 <body>
 <header class="bar">
   <a class="brand" href="{{ url_for('home') }}" aria-label="{{ c.profile.name }}, home"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="40" height="40"></a>
-  <nav aria-label="Sections">{% for s in c.nav %}<a href="{{ url_for('home') }}#{{ s.id }}">{{ s.label }}</a>{% endfor %}</nav>
+  <nav aria-label="Sections">
+    {% for s in c.nav %}<a href="{{ url_for('home') }}#{{ s.id }}">{{ s.label }}</a>{% endfor %}
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+  </nav>
 </header>
 <main>{% block content %}{% endblock %}</main>
 <footer class="foot"><span>{{ c.profile.name }}, {{ year or '' }}</span><span>Built with Flask</span></footer>
 <div id="glow" hidden aria-hidden="true"><i></i><b></b></div>
-<button id="chat-open" class="chat-open" type="button" aria-label="Open the chat assistant" aria-controls="chat" aria-expanded="false">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round"/></svg>Ask about Asad</button>
+<button id="chat-open" class="chat-open dynamic-btn" type="button" aria-label="Open the chat assistant" aria-controls="chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round"/></svg>Ask about Asad</button>
 <section id="chat" class="chat" role="dialog" aria-label="Chat with the portfolio assistant" hidden>
-  <header><div><strong>Ask about Asad</strong><small>Answers come from this portfolio</small></div><button type="button" id="chat-close" aria-label="Close chat">&times;</button></header>
+  <header><div><strong>Ask about Asad</strong><small>Answers come from this portfolio</small></div><button type="button" id="chat-close" class="btn-icon" aria-label="Close chat">&times;</button></header>
   <div id="chat-log" class="log" aria-live="polite"></div>
   <div id="chat-tips" class="tips"></div>
   <form id="chat-form"><input id="chat-input" placeholder="Ask about projects, skills, experience" maxlength="600" autocomplete="off" aria-label="Your message">
-    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-3-7z" stroke-linejoin="round"/></svg></button></form>
+    <button type="submit" class="dynamic-btn" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 12l16-8-6 16-3-7z" stroke-linejoin="round"/></svg></button></form>
 </section>
 <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 <script src="{{ url_for('static', filename='js/extras.js') }}" defer></script>

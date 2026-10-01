@@ -26,6 +26,7 @@
     requestAnimationFrame(tick);
   })();
 })();
+
 (() => {
   const f = document.getElementById('contact-form');
   if (!f) return;
@@ -54,7 +55,7 @@
 
 (() => {
   const $ = id => document.getElementById(id);
-  const box = $('chat'), log = $('chat-log'), input = $('chat-input'), open = $('chat-open'), tips = $('chat-tips');
+  const box = $('chat'), log = $('chat-log'), input =$('chat-input'), open = $('chat-open'), tips =$('chat-tips');
   if (!box) return;
   const hist = [];
   let busy = false;
@@ -103,7 +104,6 @@
     busy = false; input.focus();
   }
   open.onclick = () => toggle(true);
-  $('chat-close').onclick = () => toggle(false);
-  $('chat-form').onsubmit = e => { e.preventDefault(); send(input.value); };
+  $('chat-close').onclick = () => toggle(false);$('chat-form').onsubmit = e => { e.preventDefault(); send(input.value); };
   addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) toggle(false); });
 })();

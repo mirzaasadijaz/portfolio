@@ -1,5 +1,23 @@
 (() => {
-  // Project filter
+  // --- NEW: Dark/Light Mode Toggle ---
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      // Check current theme
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      // Apply new theme
+      htmlElement.setAttribute('data-theme', newTheme);
+      
+      // Save user preference to localStorage so it remembers their choice
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+
+  // --- EXISTING: Project filter ---
   const chips = document.querySelectorAll('.chips button');
   chips.forEach(b => b.addEventListener('click', () => {
     chips.forEach(o => o.setAttribute('aria-pressed', o === b));
@@ -8,14 +26,14 @@
     });
   }));
 
-  // Current section in the nav
+  // --- EXISTING: Current section in the nav ---
   const links = [...document.querySelectorAll('.bar nav a')];
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.toggleAttribute('aria-current', a.hash === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const s = document.querySelector(a.hash); if (s) io.observe(s); });
 
-  // Hero: points settle into clusters around centroids, the pointer pulls nearby points in
+  // --- EXISTING: Hero canvas animation ---
   const cv = document.getElementById('field');
   if (!cv) return;
   const ctx = cv.getContext('2d'), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
