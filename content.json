@@ -192,7 +192,6 @@
       "summary": "Assistants that answer from real product and document data, and decide for themselves when to look something up instead of guessing.",
       "tools": [
         "LangGraph",
-        "Groq",
         "RAG",
         "Streamlit"
       ],

@@ -41,7 +41,7 @@
     {% if more %}<h3 class="sub">More on GitHub</h3>
     {% for r in more %}<article class="item slim"><h3><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a></h3><p>{{ r.description }}</p><p class="meta">{{ r.language or 'Various' }}, updated {{ r.pushed }}</p></article>{% endfor %}{% endif %}
     {% if docker %}<h3 class="sub">Container images</h3>
-    {% for d in docker %}<article class="item slim"><h3><a href="{{ d.url }}" target="_blank" rel="noopener">{{ d.name }}</a></h3>{% if d.description %}<p>{{ d.description }}</p>{% endif %}<p class="meta">{{ '{:,}'.format(d.pulls) }} pulls, updated {{ d.updated }}</p></article>{% endfor %}{% endif %}
+    {% for d in docker %}<article class="item slim"><h3><a href="{{ d.url }}" target="_blank" rel="noopener">{{ d.name }}</a></h3>{% if d.description %}<p>{{ d.description }}</p>{% endif %}<p class="meta">Updated {{ d.updated }}</p></article>{% endfor %}{% endif %}
   </div>
 </section>
 
