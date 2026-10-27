@@ -3,11 +3,12 @@
     "name": "Asad Ijaz",
     "role": "Data scientist and automation developer, Faisalabad, Pakistan",
     "tagline": "I build predictive models and the software that puts them to work.",
-    "summary": "Asad Ijaz is a data scientist building machine learning models, LLM agents and automation tools in Python.",
+    "summary": "Asad Ijaz is a data scientist building machine learning models, LLM agents and RAG systems in Python.",
     "email": "mirzaasadijaz@gmail.com",
     "about": [
       "I take a problem from raw data to something people can use: cleaning and exploring the data, training the model (churn prediction, recommendation systems), then wrapping it in an app or pipeline.",
-      "Lately that work is agentic. I build LangGraph systems that retrieve, grade their own answers and correct course, and pipelines that research, write and publish on their own. I am a data scientist at Optimum Tech and a computer science student at the University of Agriculture, Faisalabad."
+      "Lately that work is agentic. I build LangGraph systems that retrieve, grade their own answers and correct course, a voice assistant that works in Urdu and English with 35 tools, and pipelines that research, write and publish on their own.",
+      "I am a data scientist at Optimum Tech and a computer science student at the University of Agriculture, Faisalabad. I also take freelance work: ML models, RAG chatbots, data pipelines and automation."
     ]
   },
   "accounts": {
@@ -44,14 +45,26 @@
     {
       "label": "Docker Hub",
       "url": "https://hub.docker.com/u/mirzaasadijaz"
-    },
-    {
-      "label": "Instagram",
-      "url": "https://www.instagram.com/mirzaasadijaz"
     }
   ],
   "more_limit": 8,
   "projects": [
+    {
+      "title": "Telecom customer churn prediction",
+      "repo": "Telecom-Customer-Retention-Intelligence-System",
+      "summary": "An end-to-end churn pipeline: SQL data normalization, exploratory analysis, model training in Python and an interactive Streamlit app that ranks at-risk customers.",
+      "tags": [
+        "Churn prediction",
+        "SQL",
+        "Streamlit"
+      ],
+      "url": "https://github.com/mirzaasadijaz/Telecom-Customer-Retention-Intelligence-System",
+      "areas": [
+        "ml",
+        "ds",
+        "python"
+      ]
+    },
     {
       "title": "Agentic RAG with hybrid search and reranking",
       "repo": "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
@@ -69,19 +82,19 @@
       ]
     },
     {
-      "title": "AI email dispatcher",
-      "repo": "AI-Agent-Email-Dispatcher",
-      "summary": "A Streamlit app where a Gemini-powered LangGraph workflow writes, themes, illustrates and sends personalised bulk email.",
+      "title": "JARVIS voice assistant",
+      "repo": "JARVIS",
+      "summary": "An Urdu and English voice assistant behind a wake word and PIN, driven by a LangGraph agent with 35 tools and RAG over local files.",
       "tags": [
         "LangGraph",
-        "Gemini",
-        "Streamlit"
+        "Voice",
+        "RAG"
       ],
-      "url": "https://github.com/mirzaasadijaz/AI-Agent-Email-Dispatcher",
+      "url": "https://github.com/mirzaasadijaz/JARVIS",
       "areas": [
         "agents",
         "ai",
-        "python"
+        "chatbot"
       ]
     },
     {
@@ -101,6 +114,22 @@
       ]
     },
     {
+      "title": "AI email dispatcher",
+      "repo": "AI-Agent-Email-Dispatcher",
+      "summary": "A Streamlit app where a Gemini-powered LangGraph workflow writes, themes, illustrates and sends personalised bulk email.",
+      "tags": [
+        "LangGraph",
+        "Gemini",
+        "Streamlit"
+      ],
+      "url": "https://github.com/mirzaasadijaz/AI-Agent-Email-Dispatcher",
+      "areas": [
+        "agents",
+        "ai",
+        "python"
+      ]
+    },
+    {
       "title": "Autonomous LinkedIn publisher",
       "repo": "Autonomous-LinkedIn-AI-Publisher",
       "summary": "A multi-agent pipeline that finds a trending data science topic, researches it, writes a post, fact-checks it and publishes it to LinkedIn.",
@@ -115,31 +144,47 @@
       ]
     },
     {
-      "title": "Facebook auto poster",
-      "repo": "Facebook-Auto-Poster",
-      "summary": "Selenium automation that logs in, visits group URLs, handles the anonymous-post toggle and uploads media.",
+      "title": "University timetable management system",
+      "repo": "university-timetable-management-system",
+      "summary": "A Flask and MySQL web app for scheduling university classes, with Admin, Teacher and Student roles, a 7-table schema and automatic clash detection.",
       "tags": [
-        "Python",
-        "Selenium"
+        "Flask",
+        "MySQL"
       ],
-      "url": "https://github.com/mirzaasadijaz/Facebook-Auto-Poster",
+      "url": "https://github.com/mirzaasadijaz/university-timetable-management-system",
       "areas": [
         "python"
       ]
     },
     {
-      "title": "Next-word predictor",
-      "repo": "Next-Word-Predictor-LSTM-",
-      "summary": "An Embedding and LSTM network in TensorFlow/Keras, trained on Kafka's The Metamorphosis to predict the next word and generate text.",
+      "title": "Deep learning projects",
+      "repo": "deep-learning-projects",
+      "summary": "Six TensorFlow/Keras projects in one repo: MNIST with an ANN and a CNN, CIFAR-10, Cats vs Dogs with transfer learning, a tuned California Housing ANN and an LSTM next-word predictor trained on Kafka's The Metamorphosis.",
       "tags": [
         "TensorFlow",
         "Keras",
+        "CNN",
         "LSTM"
       ],
-      "url": "https://github.com/mirzaasadijaz/Next-Word-Predictor-LSTM-",
+      "url": "https://github.com/mirzaasadijaz/deep-learning-projects",
       "areas": [
         "dl",
         "ml"
+      ]
+    },
+    {
+      "title": "Classical machine learning projects",
+      "repo": "machine-learning-projects",
+      "summary": "Four scikit-learn projects in one repo: a heart disease classifier, insurance cost regression with random forests, an end-to-end housing price pipeline and a movie recommender.",
+      "tags": [
+        "scikit-learn",
+        "Pandas",
+        "Recommender"
+      ],
+      "url": "https://github.com/mirzaasadijaz/machine-learning-projects",
+      "areas": [
+        "ml",
+        "ds"
       ]
     }
   ],
@@ -155,6 +200,12 @@
       "org": "Self-Employed",
       "dates": "Feb 2026 to now",
       "place": "Remote"
+    },
+    {
+      "role": "Laravel Developer",
+      "org": "IMPEKT Limited",
+      "dates": "Jul 2025 to Feb 2026",
+      "place": "Pakistan"
     },
     {
       "role": "Laravel Developer",
@@ -178,11 +229,11 @@
     },
     {
       "group": "LLM systems",
-      "items": "LangGraph, agentic RAG, hybrid search, reranking, Streamlit, Gemini, Groq"
+      "items": "LangGraph, LangChain, agentic RAG, hybrid search, reranking, ChromaDB, Streamlit, FastAPI, Gemini, Groq"
     },
     {
       "group": "Software",
-      "items": "Flask, Laravel, C++, C#, .NET, SQL, MySQL, Selenium, Docker"
+      "items": "Flask, Laravel, C++, C#, .NET, SQL, MySQL, Selenium, Docker, Git"
     }
   ],
   "areas": [
@@ -197,7 +248,8 @@
       ],
       "projects": [
         "Aura-Accessories-Agentic-RAG-Chatbot",
-        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
+        "JARVIS"
       ]
     },
     {
@@ -213,13 +265,14 @@
       "projects": [
         "Autonomous-LinkedIn-AI-Publisher",
         "AI-Agent-Email-Dispatcher",
-        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
+        "JARVIS"
       ]
     },
     {
       "id": "dl",
       "title": "Deep learning",
-      "summary": "Neural networks built and trained end to end, including sequence models for text generation.",
+      "summary": "Neural networks built and trained end to end, from CNNs and transfer learning to sequence models for text generation.",
       "tools": [
         "TensorFlow",
         "Keras",
@@ -227,7 +280,7 @@
         "LSTM"
       ],
       "projects": [
-        "Next-Word-Predictor-LSTM-"
+        "deep-learning-projects"
       ]
     },
     {
@@ -240,7 +293,10 @@
         "MLflow",
         "NumPy"
       ],
-      "projects": []
+      "projects": [
+        "Telecom-Customer-Retention-Intelligence-System",
+        "machine-learning-projects"
+      ]
     },
     {
       "id": "ds",
@@ -253,7 +309,10 @@
         "Plotly",
         "SQL"
       ],
-      "projects": [],
+      "projects": [
+        "Telecom-Customer-Retention-Intelligence-System",
+        "machine-learning-projects"
+      ],
       "note": "Since Jul 2026"
     },
     {
@@ -267,13 +326,14 @@
         "Gemini"
       ],
       "projects": [
-        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking"
+        "Agentic-RAG-with-LangGraph-Hybrid-Search-Reranking",
+        "JARVIS"
       ]
     },
     {
       "id": "python",
       "title": "Python",
-      "summary": "My main language for data work, automation and small web apps, from Selenium bots to Flask and Streamlit interfaces.",
+      "summary": "My main language for data work, automation and small web apps, from Selenium scrapers to Flask and Streamlit interfaces.",
       "tools": [
         "Python",
         "Selenium",
@@ -281,8 +341,9 @@
         "Streamlit"
       ],
       "projects": [
-        "Facebook-Auto-Poster",
-        "AI-Agent-Email-Dispatcher"
+        "university-timetable-management-system",
+        "AI-Agent-Email-Dispatcher",
+        "Telecom-Customer-Retention-Intelligence-System"
       ]
     },
     {
